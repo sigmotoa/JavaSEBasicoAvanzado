@@ -1,5 +1,17 @@
 package com.anncode.amazonviewer.model;
 
+/**
+ * <h1>Film</h1>
+ * Film es una clase padre abstracta
+ * 
+ * <p>
+ * 
+ * {@code con esta etiqueta se muestra como si fuera fragmento de codigo}
+ * 
+ * @author sigmotoa
+ * @version 1.1
+ * */
+
 public abstract class Film {
 	
 	private String title;
@@ -68,6 +80,9 @@ public abstract class Film {
 	}
 	
 	
+	/**
+	 * {@code view() es un metodo abstracto obligatorio de implementar}
+	 * */
 	public abstract void view();
 
 }

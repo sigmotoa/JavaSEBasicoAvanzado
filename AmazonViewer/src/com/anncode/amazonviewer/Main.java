@@ -14,6 +14,15 @@ import com.anncode.amazonviewer.model.Serie;
 import com.anncode.makereport.Report;
 import com.anncode.util.AmazonUtil;
 
+
+/**
+ * <h1>Amazon Viewer</h1>
+ * 
+ * 
+ * @author sigmotoa
+ * @version 1.1
+ * @since 2019
+ * */
 public class Main {
 
 	public static void main(String[] args) {
