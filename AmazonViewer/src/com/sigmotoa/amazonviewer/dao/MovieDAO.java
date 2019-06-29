@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+import java.sql.Statement;
 import com.anncode.amazonviewer.model.Movie;
-
+//import com.mysql.jdbc.Statement;
 import com.sigmotoa.amazonviewer.db.IDBConnectioni;
 import static com.sigmotoa.amazonviewer.db.DataBase.*;
 
@@ -15,6 +15,26 @@ public interface MovieDAO extends IDBConnectioni{
 	
 	default Movie setMovieViewed(Movie movie)
 	{
+		try (Connection connection=connectToDB())
+		{
+			Statement statement=connection.createStatement();
+			String query ="INSERT INTO "+TVIEWED+
+					" ("+TVIEWED_ID_MATERIAL+", "+TVIEWED_ID_ELEMENT+", "+TVIEWED_ID_USER+")"
+					+" VALUES("+TMATERIAL_ID [0]+", "+movie.getId()+", "+TUSER_ID+")";
+					
+			
+			if (statement.executeUpdate(query)>0)
+			{
+				System.out.println("Quedo en visto");
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+			// TODO: handle exception
+		}
 		
 		
 		
